@@ -65,3 +65,6 @@ while cnt < depositPeriod {
     totalSum = (totalSum * 100).rounded(.toNearestOrAwayFromZero) / 100 //округлим до 2-х знаков
 }
 print("Итоговая сумма = \(totalSum)")
+
+typealias MyInt = Int
+
