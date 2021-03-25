@@ -98,3 +98,39 @@ firstCar.changeStateAuto(.unloadCargo(15))
 firstCar.printInfoCar()
 firstCar.changeStateAuto(.unloadCargo(100))
 firstCar.printInfoCar()
+
+
+enum Country: String {
+    case Russia = "Россия"
+    case Ukraine = "Украина"
+    case Belarus = "Беларусь"
+}
+
+struct Client {
+    var name: String
+    var addres: String
+    var phone: String
+    var yearOfBrith: Int
+    var country: Country
+    
+    init(name: String, addres: String = "", phone: String = "", yearOfBrith: Int, country: Country) {
+        self.name = name
+        self.addres = addres
+        self.phone = phone
+        self.yearOfBrith = yearOfBrith
+        self.country = country
+    }
+    
+    func printInfo(){
+        print("""
+            Клиент: \(name)
+            Адрес: \(addres)
+            Контактный телефон: \(phone)
+            Год рождения: \(yearOfBrith)
+            Страна: \(country.rawValue)
+            """)
+    }
+}
+
+var alex = Client(name: "Alex", addres: "г. Самара, Площадь Ленина, д. 2, кв.15", phone: "255-07-23", yearOfBrith: 2001, country: .Russia)
+alex.printInfo()
